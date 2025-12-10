@@ -1,0 +1,195 @@
+:root {
+    --cor-principal: #6c5ce7;
+    --cor-secundaria: #2d3436;
+    --cor-fundo: #f5f6fa;
+    --cor-fundo-escuro: #ffffff; 
+    --sombra-suave: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --sombra-forte: 0 8px 18px rgba(0, 0, 0, 0.15); 
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-secundaria);
+    line-height: 1.6;
+    transition: background-color 0.3s;
+}
+
+#introducao {
+    background-image: linear-gradient(135deg, #6c5ce7 0%, #0984e3 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    box-shadow: var(--sombra-suave);
+}
+
+#introducao h1 {
+    font-size: 4em;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+#introducao h2 {
+    font-size: 1.6em;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.2em;
+    color: var(--cor-secundaria);
+    margin-bottom: 40px;
+    border-bottom: 3px solid var(--cor-principal);
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+#cards-container, .demos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.projeto-card {
+    border: none;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: left;
+    background-color: var(--cor-fundo-escuro);
+}
+
+.projeto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-forte);
+}
+
+.demo-card {
+    border: 1px solid #e1e4e8;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    text-align: left;
+    background-color: white;
+    transition: box-shadow 0.3s;
+}
+.demo-card:hover {
+    box-shadow: 0 6px 15px rgba(108, 92, 231, 0.2);
+}
+
+.demo-card input[type="text"], .demo-card input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    width: calc(60% - 15px);
+    margin-right: 10px;
+}
+.demo-card button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--cor-principal);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+.demo-card button:hover {
+    background-color: #5544d1;
+    transform: translateY(-1px);
+}
+.demo-card button:active {
+    transform: translateY(1px);
+}
+
+#lista-sonhos {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#lista-sonhos li, #lista-tarefas li {
+    background-color: #f0f3f7;
+    margin-bottom: 10px;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    border-left: 5px solid var(--cor-principal);
+    font-size: 1em;
+    color: var(--cor-secundaria);
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#lista-sonhos li[style*="red"] {
+    border-left-color: #e74c3c !important;
+    background-color: #ffe0e0;
+}
+
+.remover-btn {
+    background-color: #e74c3c !important;
+    padding: 6px 10px !important;
+    font-size: 0.8em;
+}
+
+.habilidades-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill-card {
+    background-color: white;
+    border: 1px solid #e1e4e8;
+    color: var(--cor-secundaria);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 700;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+.skill-card:hover {
+    background-color: var(--cor-principal);
+    color: white;
+    box-shadow: 0 4px 10px rgba(108, 92, 231, 0.4);
+}
+
+footer {
+    background-color: var(--cor-secundaria);
+    color: #e1e1e1;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+    margin-top: 50px;
+}
+
+@media (max-width: 600px) {
+    #introducao h1 {
+        font-size: 3em;
+    }
+    #cards-container, .demos-grid {
+        grid-template-columns: 1fr; 
+    }
+    .demo-card input[type="text"], .demo-card input[type="number"] {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .demo-card button {
+        width: 100%;
+    }
+}
